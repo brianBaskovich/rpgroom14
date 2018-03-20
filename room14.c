@@ -48,5 +48,5 @@ int main(void)
 		puts("You die");
 		return EXIT_SUCCESS;
 	}
-
+	puts("On the side of the room opposite from where you entered, the wall slowly ascends like a garage door to a bridge. You win!");
 }
