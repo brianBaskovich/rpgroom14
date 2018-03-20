@@ -4,11 +4,13 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 char name[256];
 char quest[256];
 char color[256];
 char capital[256];
+char airVelocity[256];
 int i = 0;
 
 int main(void)
@@ -26,13 +28,19 @@ int main(void)
 	scanf("%s", capital);
 	while(capital[i] != '\0')
 	{
-		capital[i] = (capital[i] + 32);
-		i++;
+		capital[i] = tolower(capital[i]);
 	}
+	i = 0;
 	if((strcmp(capital, "assur") != 0) && (strcmp(capital, "nineveh") != 0))
 	{
 		puts("You die");
 		return EXIT_SUCCESS;
 	}
 	puts("WHAT... is the air speed velocity of an unladen swallow?");
+	scanf("%s", airVelocity);
+	while(airVelocity != '\0')
+	{
+		airVelocity[i] = tolower(airVelocity[i]);
+		i++;
+	}
 }
