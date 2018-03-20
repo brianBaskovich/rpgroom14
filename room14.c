@@ -43,4 +43,10 @@ int main(void)
 		airVelocity[i] = tolower(airVelocity[i]);
 		i++;
 	}
+	if(strcmp(airVelocity, "what do you mean? an african or european swallow?") != 0)
+	{
+		puts("You die");
+		return EXIT_SUCCESS;
+	}
+
 }
