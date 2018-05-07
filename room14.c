@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 char name[256];
 char quest[256];
@@ -26,9 +27,12 @@ int main(void)
 	printf("The lights dim to a more comfortable amount and slowly turn %s.\n", color);
 	puts("WHAT... is the capital of Assyria?");
 	scanf("%s", capital);
-	while(capital[i] != '\0')
+	for(i = 0; i < 256; i++)
 	{
-		capital[i] = tolower(capital[i]);
+		if(capital[i] >= 'A' && capital[i] <= 'Z')
+		{
+			capital[i] = tolower(capital[i]);
+		}
 	}
 	i = 0;
 	if((strcmp(capital, "assur") != 0) && (strcmp(capital, "nineveh") != 0))
@@ -38,10 +42,12 @@ int main(void)
 	}
 	puts("WHAT... is the air speed velocity of an unladen swallow?");
 	scanf("%s", airVelocity);
-	while(airVelocity != '\0')
+	for(i = 0; i < 256; i++)
 	{
-		airVelocity[i] = tolower(airVelocity[i]);
-		i++;
+		if(airVelocity[i] >= 'A' && airVelocity[i] <= 'Z')
+		{
+			airVelocity[i] = tolower(airVelocity[i]);
+		}
 	}
 	if(strcmp(airVelocity, "what do you mean? an african or european swallow?") != 0)
 	{
